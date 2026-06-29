@@ -1,4 +1,3 @@
-# 路径（相对项目根目录）
 paths:
   raw_power: datasets/raw/household_power_consumption.txt
   raw_weather: datasets/raw/weather_monthly.csv
@@ -10,11 +9,10 @@ paths:
   scaler_path: datasets/processed/scaler.joblib
   results_dir: experiments/results
 
-# train/test 划分（课程未提供，自行按时间切分）
 split:
-  method: date          # date: 按 test_start_date 切分 | ratio: 按 train_ratio 切分
-  test_start_date: "2009-01-01"   # method=date 时生效；test 需 >=455 天以支持 90→365
-  train_ratio: 0.75               # method=ratio 时生效
+  method: date         
+  test_start_date: "2009-01-01"
+  train_ratio: 0.75
 
 # 滑动窗口
 window:
@@ -23,10 +21,10 @@ window:
   long_output_len: 365
   stride: 1
 
-# 特征列（不含 date 与 target）
+# 特征列
 target_col: global_active_power
 
-# 天气列（可选，无文件时自动跳过）
+# 天气列
 weather_cols:
   - RR
   - NBJRR1

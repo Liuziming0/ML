@@ -37,14 +37,7 @@ experiments/results/**/*
 !experiments/results/comparison_short.png
 !experiments/results/comparison_long.png
 
-# LaTeX 编译中间文件
-docs/*.aux
-docs/*.log
-docs/*.out
-docs/*.toc
-docs/*.synctex.gz
-docs/*.fdb_latexmk
-docs/*.fls
-
-# 本地生成的 PDF（报告单独提交，可不进仓库）
-docs/*.pdf
+# 报告、封面素材、本地下载（不上传）
+docs/
+image/
+downloads/

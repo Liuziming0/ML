@@ -10,7 +10,7 @@
 ## 1. 克隆仓库并安装依赖
 
 ```bash
-git clone <你的 GitHub 仓库地址>
+git clone https://github.com/Liuziming0/ML.git
 cd 机器学习
 
 pip install -r requirements.txt
@@ -95,18 +95,6 @@ python scripts/run_experiments.py --config configs/default.yaml
 ```
 
 训练完成后，终端会打印各模型 MSE/MAE 的 mean±std，并在结果目录生成汇总文件与对比图。
-
-## 5. 编译实验报告（可选）
-
-LaTeX 报告位于 `docs/实验报告.tex`，在 `docs/` 目录下编译：
-
-```bash
-cd docs
-xelatex 实验报告.tex
-xelatex 实验报告.tex
-```
-
-生成的 PDF 为 `docs/实验报告.pdf`。提交前请将学号、姓名、GitHub 链接填入报告首页，并按 `学号-姓名.pdf` 命名。
 
 ---
 
