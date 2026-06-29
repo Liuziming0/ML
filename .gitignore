@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# 原始大文件（请按 README 自行下载）
+datasets/raw/household_power_consumption.txt
+datasets/raw/*.csv.gz
+
+# 预处理产物（运行 run_preprocess.py 可重新生成）
+datasets/processed/daily.csv
+datasets/processed/scaler.joblib
+datasets/train.csv
+datasets/test.csv
+
+# 实验输出：忽略各次训练的权重与单 run 曲线，保留汇总与对比图
+experiments/results/**/*
+!experiments/results/summary.json
+!experiments/results/summary_table.txt
+!experiments/results/comparison_short.png
+!experiments/results/comparison_long.png
+
+# LaTeX 编译中间文件
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.synctex.gz
+docs/*.fdb_latexmk
+docs/*.fls
+
+# 本地生成的 PDF（报告单独提交，可不进仓库）
+docs/*.pdf

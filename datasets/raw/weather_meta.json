@@ -1,0 +1,21 @@
+{
+  "source_url": "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/MENS/MENSQ_92_previous-1950-2024.csv.gz",
+  "department": "92 (Hauts-de-Seine)",
+  "household_location": "Sceaux, France (UCI dataset)",
+  "selected_station_id": 92032001,
+  "selected_station_name": "FONTENAY - CEN",
+  "period": [
+    200612,
+    201011
+  ],
+  "columns": [
+    "year",
+    "month",
+    "RR",
+    "NBJRR1",
+    "NBJRR5",
+    "NBJRR10",
+    "NBJBROU"
+  ],
+  "rr_unit_note": "RR converted from 1/10 mm to mm"
+}

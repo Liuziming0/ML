@@ -1,0 +1,62 @@
+# 路径（相对项目根目录）
+paths:
+  raw_power: datasets/raw/household_power_consumption.txt
+  raw_weather: datasets/raw/weather_monthly.csv
+  raw_weather_gz: datasets/raw/weather_dept92_1950-2024.csv.gz
+  processed_dir: datasets/processed
+  train_csv: datasets/train.csv
+  test_csv: datasets/test.csv
+  daily_csv: datasets/processed/daily.csv
+  scaler_path: datasets/processed/scaler.joblib
+  results_dir: experiments/results
+
+# train/test 划分（课程未提供，自行按时间切分）
+split:
+  method: date          # date: 按 test_start_date 切分 | ratio: 按 train_ratio 切分
+  test_start_date: "2009-01-01"   # method=date 时生效；test 需 >=455 天以支持 90→365
+  train_ratio: 0.75               # method=ratio 时生效
+
+# 滑动窗口
+window:
+  input_len: 90
+  short_output_len: 90
+  long_output_len: 365
+  stride: 1
+
+# 特征列（不含 date 与 target）
+target_col: global_active_power
+
+# 天气列（可选，无文件时自动跳过）
+weather_cols:
+  - RR
+  - NBJRR1
+  - NBJRR5
+  - NBJRR10
+  - NBJBROU
+
+# 训练超参数
+train:
+  batch_size: 32
+  batch_size_long: 16
+  epochs: 80
+  patience: 12
+  lr: 0.001
+  val_ratio: 0.1
+  seeds: [42, 123, 456, 789, 2026]
+  models:
+    lstm:
+      hidden_size: 128
+      num_layers: 2
+      dropout: 0.2
+    transformer:
+      d_model: 64
+      nhead: 4
+      num_layers: 2
+      dim_feedforward: 256
+      dropout: 0.1
+    cnn_transformer:
+      d_model: 64
+      nhead: 4
+      num_layers: 2
+      dim_feedforward: 256
+      dropout: 0.1
